@@ -20,5 +20,7 @@ def testing_config():
             -----END EC PRIVATE KEY-----
             """,
             "INVOICES_TAG": "test",
+            "MIN_INVOICES_QUANTITY": 1,
+            "MAX_INVOICES_QUANTITY": 1,
         }
     )

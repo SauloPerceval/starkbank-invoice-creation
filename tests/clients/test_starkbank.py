@@ -11,9 +11,26 @@ def test_send_invoices(sb_invoice_create_mock, testing_config):
         Invoice(amount=10000, payer_cpf="00536382719", payer_name="John Doe"),
         Invoice(amount=20000, payer_cpf="55371035400", payer_name="Jane Doe"),
     ]
+    sb_invoice_create_mock.return_value = [
+        starkbank.Invoice(
+            amount=10000,
+            tax_id="00536382719",
+            name="John Doe",
+            tags=["test"],
+            id=1,
+        ),
+        starkbank.Invoice(
+            amount=20000,
+            tax_id="55371035400",
+            name="Jane Doe",
+            tags=["test"],
+            id=2,
+        ),
+    ]
 
-    sb_adapter.send_invoices(invoices=invoices)
+    result = sb_adapter.send_invoices(invoices=invoices)
 
+    assert result == ["1", "2"]
     for sent_invoice, invoice in zip(
         sb_invoice_create_mock.call_args.args[0], invoices
     ):

@@ -1,4 +1,4 @@
-from typing import Iterable, NamedTuple
+from typing import Iterable, List, NamedTuple
 
 from src.config import Config
 
@@ -23,8 +23,8 @@ class StarkBankAdapter:
         self._starkbank_client = starkbank
         self._invoices_tag = config["INVOICES_TAG"]
 
-    def send_invoices(self, invoices: Iterable[Invoice]):
-        self._starkbank_client.invoice.create(
+    def send_invoices(self, invoices: Iterable[Invoice]) -> List[str]:
+        result_invoices = self._starkbank_client.invoice.create(
             [
                 self._starkbank_client.Invoice(
                     amount=i.amount,
@@ -35,3 +35,4 @@ class StarkBankAdapter:
                 for i in invoices
             ]
         )
+        return [i.id for i in result_invoices]
