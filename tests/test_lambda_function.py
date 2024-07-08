@@ -1,7 +1,7 @@
 from unittest import mock
 
-from src.clients.starkbank import Invoice, StarkBankAdapter
-from src.lambda_function import lambda_handler
+from clients.starkbank import Invoice, StarkBankAdapter
+from lambda_function import lambda_handler
 
 
 @mock.patch.object(StarkBankAdapter, "send_invoices")

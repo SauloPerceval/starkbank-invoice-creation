@@ -1,6 +1,6 @@
 from typing import Iterable, List, NamedTuple
 
-from src.config import Config
+from config import Config
 
 
 class Invoice(NamedTuple):

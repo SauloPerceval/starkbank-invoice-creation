@@ -1,7 +1,7 @@
 from unittest import mock
 
 import starkbank
-from src.clients.starkbank import Invoice, StarkBankAdapter
+from clients.starkbank import Invoice, StarkBankAdapter
 
 
 @mock.patch.object(starkbank.invoice, "create")

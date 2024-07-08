@@ -2,18 +2,19 @@ import json
 import logging
 from random import randint
 
-from src.clients.starkbank import Invoice, StarkBankAdapter
-from src.config import StagingConfig
-from src.helpers import generate_random_cpf
+from clients.starkbank import Invoice, StarkBankAdapter
+from config import StagingConfig
+from helpers import generate_random_cpf
 
 logger = logging.getLogger()
+logger.setLevel("INFO")
 
 
 def lambda_handler(event: dict, context, config=StagingConfig()):
     sb_adapter = StarkBankAdapter(config=config)
 
     number_of_invoices = randint(
-        config["MIN_INVOICES_QUANTITY"], config["MAX_INVOICES_QUANTITY"]
+        int(config["MIN_INVOICES_QUANTITY"]), int(config["MAX_INVOICES_QUANTITY"])
     )
     logger.info(f"Generating data for {number_of_invoices} invoices")
 
