@@ -33,6 +33,16 @@ Parameters:
     Type: String
     Default: test-saulo
     Description: Tag that will be passed on created invoices
+  LogLevel:
+    Type: String
+    Default: INFO
+    Description: Level of logs that will be emitted by lambda
+    AllowedValues:
+      - DEBUG
+      - INFO
+      - WARNING
+      - ERROR
+      - CRITICAL
 
 Resources:
   StarkbankInvoiceCreation:
