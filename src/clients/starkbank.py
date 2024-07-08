@@ -15,7 +15,7 @@ class StarkBankAdapter:
 
         user = starkbank.Project(
             environment=config["STARKBANK_ENVIRONMENT"],
-            id=config["STARKBANK_ID"],
+            id=config["STARKBANK_PROJECT_ID"],
             private_key=config["STARKBANK_PRIVATE_KEY_CONTENT"],
         )
         starkbank.user = user

@@ -8,7 +8,7 @@ def testing_config():
     return TestingConfig(
         {
             "STARKBANK_ENVIRONMENT": "sandbox",
-            "STARKBANK_ID": "12345678900",
+            "STARKBANK_PROJECT_ID": "12345678900",
             "STARKBANK_PRIVATE_KEY_CONTENT": """
             -----BEGIN EC PARAMETERS-----
             BgUrgQQACg==

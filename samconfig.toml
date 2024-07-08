@@ -4,7 +4,7 @@ version = 0.1
 
 [default]
 [default.global.parameters]
-stack_name = "stark-bank-invoice-creation"
+stack_name = "starkbank-invoice-creation"
 
 [default.build.parameters]
 cached = true

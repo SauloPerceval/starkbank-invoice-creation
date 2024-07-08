@@ -7,10 +7,10 @@ from config import StagingConfig
 from helpers import generate_random_cpf
 
 logger = logging.getLogger()
-logger.setLevel("INFO")
 
 
 def lambda_handler(event: dict, context, config=StagingConfig()):
+    logger.setLevel(config["LOGLEVEL"] or "INFO")
     sb_adapter = StarkBankAdapter(config=config)
 
     number_of_invoices = randint(
