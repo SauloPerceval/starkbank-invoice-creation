@@ -28,6 +28,6 @@ def lambda_handler(event: dict, context, config=StagingConfig()):
     ]
 
     logger.info(f"Creating {number_of_invoices} invoices on Starkbank")
-    result = sb_adapter.send_invoices(invoices=invoices)
+    result = sb_adapter.send_invoices(invoices=invoices, tag=config["INVOICES_TAG"])
 
     logger.info(f"Created invoices ids: {result}")
