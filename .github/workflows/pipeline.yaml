@@ -103,6 +103,7 @@ jobs:
             --s3-bucket ${TESTING_ARTIFACTS_BUCKET} \
             --no-fail-on-empty-changeset \
             --role-arn ${TESTING_CLOUDFORMATION_EXECUTION_ROLE}
+            --parameter-overrides StarkbankSecretsId= ${{ secrets.STARKBANKSECRETSID }}
 
   build-and-package:
     if: github.ref == 'refs/heads/master'
@@ -190,6 +191,7 @@ jobs:
             --s3-bucket ${TESTING_ARTIFACTS_BUCKET} \
             --no-fail-on-empty-changeset \
             --role-arn ${TESTING_CLOUDFORMATION_EXECUTION_ROLE}
+            --parameter-overrides StarkbankSecretsId= ${{ secrets.STARKBANKSECRETSID }}
 
   integration-test:
     if: github.ref == 'refs/heads/master'
@@ -234,3 +236,4 @@ jobs:
             --s3-bucket ${PROD_ARTIFACTS_BUCKET} \
             --no-fail-on-empty-changeset \
             --role-arn ${PROD_CLOUDFORMATION_EXECUTION_ROLE}
+            --parameter-overrides StarkbankSecretsId= ${{ secrets.STARKBANKSECRETSID }}
