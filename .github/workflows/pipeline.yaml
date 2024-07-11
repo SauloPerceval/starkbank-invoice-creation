@@ -12,9 +12,9 @@ on:
 env:
   SAM_TEMPLATE: template.yaml
   TESTING_STACK_NAME: starkbank-invoice-creation-dev
-  TESTING_PIPELINE_EXECUTION_ROLE: arn:aws:iam::799089934653:role/aws-sam-cli-managed-dev-pipel-PipelineExecutionRole-39FlVydzIUY0
-  TESTING_CLOUDFORMATION_EXECUTION_ROLE: arn:aws:iam::799089934653:role/aws-sam-cli-managed-dev-p-CloudFormationExecutionRo-Futc4ugdNeAT
-  TESTING_ARTIFACTS_BUCKET: aws-sam-cli-managed-dev-pipeline-r-artifactsbucket-v2twdcm54tju
+  TESTING_PIPELINE_EXECUTION_ROLE: arn:aws:iam::799089934653:role/aws-sam-cli-managed-dev-pipel-PipelineExecutionRole-HIRorjiarGj8
+  TESTING_CLOUDFORMATION_EXECUTION_ROLE: arn:aws:iam::799089934653:role/aws-sam-cli-managed-dev-p-CloudFormationExecutionRo-pKBV3x5tNjdg
+  TESTING_ARTIFACTS_BUCKET: aws-sam-cli-managed-dev-pipeline-r-artifactsbucket-e3ivmg81zgr5
   # If there are functions with "Image" PackageType in your template,
   # uncomment the line below and add "--image-repository ${TESTING_IMAGE_REPOSITORY}" to
   # testing "sam package" and "sam deploy" commands.
