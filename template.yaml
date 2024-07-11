@@ -59,6 +59,7 @@ Resources:
           Properties:
             Schedule: rate(3 hours)
             Name: SchedulerInvoiceCreation
+            Enabled: false
       Environment:
         Variables:
           STARKBANK_ENVIRONMENT: !Ref StarkbankEnvironment
